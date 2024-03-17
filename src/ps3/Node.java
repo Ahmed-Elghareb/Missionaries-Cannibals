@@ -302,13 +302,13 @@ public class Node {
     
 	@Override
 	public String toString() {
-		// ⏪⏩  ⇦⇨ ⮕ ⬅
+		// ⏪⏩  ⇦⇨ ⮕ ⬅ ⬅ ⬅←→ ⇦⇨ ⬅➡ ⬅➡
 		String dir = "";
 		if (this.action!=null && this.action.name().startsWith("R")) {
-			dir += " ⮕";
+			dir += " 🢂";
 		}
 		else if (this.action!=null){
-			dir += "⬅";
+			dir += " 🢀";
 		}		
 		String right = "O".repeat(state[0].get_m()) + "X".repeat(state[0].get_c());
 		int right_num = state[0].get_all();
@@ -332,7 +332,7 @@ public class Node {
 			str += "  ✅";
 		}
 		if (this.is_root()) {
-			str += "  🫚";
+			str += "  🪵";
 		}
 		
 		str += "\n---------------------------";
