@@ -14,7 +14,8 @@ public class BFSearch {
 		List<Node> closed= new ArrayList<Node>();
 
 		fringe.add(root);
-        try (PrintWriter writer = new PrintWriter(new FileWriter("output.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("output.txt", false))) {
+			writer.println("------------Nodes expansion ------------");
     		while(!fringe.isEmpty()) {		
     			Node node = fringe.get(0);
     			writer.println(node);
@@ -58,6 +59,8 @@ public class BFSearch {
 		
 		for (int i = path.size()-1; i >= 0; i --) {
 			try (PrintWriter writer = new PrintWriter(new FileWriter("output.txt", true))) {
+				writer.println("\n\n\n------------Solution ------------");
+
 				writer.println(path.get(i));
 				System.out.println(path.get(i));
 				
